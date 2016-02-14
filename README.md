@@ -1,4 +1,4 @@
-# bao-batch
+# clj-kata
 
 FIXME: description
 
@@ -10,7 +10,7 @@ Download from http://example.com/FIXME.
 
 FIXME: explanation
 
-    $ java -jar bao-batch-0.1.0-standalone.jar [args]
+    $ java -jar clj-kata-0.1.0-standalone.jar [args]
 
 ## Options
 
