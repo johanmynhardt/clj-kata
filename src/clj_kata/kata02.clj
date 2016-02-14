@@ -1,4 +1,4 @@
-(ns clj-kata.kata01)
+(ns clj-kata.kata02)
 
 (defn -idx [list min max]
   (let [idx (java.lang.Math/round (/ (+ min max) 2.0))]

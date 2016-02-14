@@ -1,6 +1,6 @@
-(ns clj-kata.kata01-test
+(ns clj-kata.kata02-test
   (:require [clojure.test :refer :all]
-            [clj-kata.kata01 :refer :all]))
+            [clj-kata.kata02 :refer :all]))
 
 (deftest chop-3-nothing
   (testing "FIXME, I fail."
