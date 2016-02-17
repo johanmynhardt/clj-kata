@@ -14,6 +14,7 @@
   (map st/triml records))
 
 (defn data-row [record]
+  "Processes raw records into data fields per row."
   (let [row (st/split record #"\s+")
         fix (fn [s]
               (if (.contains s "*") (st/replace s #"\*" "")
@@ -25,6 +26,7 @@
   (map data-row records))
 
 (defn lines [records]
+  "Prints the records with min, max and spread."
   (doseq [item records]
     (let [min (Integer/parseInt (nth item 2))
           max (Integer/parseInt (nth item 1))
@@ -32,6 +34,7 @@
       (println "min:" min "max:" max "diff:" diff "---"))))
 
 (defn find-ss [records]
+  "Finds the smallest spread from the records to proccess."
   (let [sp (atom {:id 0 :spread 500})]
     (doseq [record records]
       (let [id (nth record 0)
@@ -43,10 +46,10 @@
     (println "smallest spread:" @sp)))
 
 (defn day-lines [records]
+  "Filter raw record rows that start with digits."
   (filter #(.matches % "\\s+\\d+.*") records))
 
-(.matches "  29" "\\s+.*")
-
+;; Bring it all together, using thread-first.
 (-> (parse-records data)
     (rem-empty)
     ;; (count)
@@ -58,4 +61,3 @@
     ;; (lines)
     )
 
-;; (clojure.repl/doc assoc)
